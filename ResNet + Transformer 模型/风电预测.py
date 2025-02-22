@@ -9,12 +9,13 @@ from tensorflow.keras.layers import Conv1D, MaxPooling1D, LSTM, Dense, Dropout
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import Input, Conv1D, MaxPooling1D, Dense, Add, LayerNormalization, MultiHeadAttention, Dropout
 from tensorflow.keras.optimizers import Adam
+import openpyxl
 
 
 # 1. 数据加载与预处理
 def load_and_preprocess_data():
     folder_path = '/Users/xutong/Documents/风电功率预测/ResNet + Transformer 模型/data/raw'
-    merged_file_path = os.path.join('/Users/xutong/Documents/风电功率预测/ResNet + Transformer 模型/data/user_data', '汇总.xlsx')
+    merged_file_path = os.path.join('D:\\PycharmProjects\\Wind_power_forecast\\ResNet + Transformer 模型\\data\\user_data', '汇总.xlsx')
     # 读取已合并的文件
     df = pd.read_excel(merged_file_path, sheet_name="Sheet1")
     print(f"[DEBUG] 总样本数: {len(df)}")  # 验证数据量一致性
